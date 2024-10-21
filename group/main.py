@@ -1,6 +1,7 @@
 import pygame
 import sys
 from snake import snake_game
+from tiktactoe import tic_tac_toe_game
 
 # Initialize Pygame
 pygame.init()
@@ -41,9 +42,9 @@ def draw_menu(selected_game):
 #     print("Starting Snake Game...")
 #     # Insert Snake game logic here
 
-def tic_tac_toe_game():
-    print("Starting Tic-Tac-Toe Game...")
-    # Insert Tic-Tac-Toe game logic here
+# def tic_tac_toe_game():
+#     print("Starting Tic-Tac-Toe Game...")
+#     # Insert Tic-Tac-Toe game logic here
 
 # Add more game functions as needed
 
@@ -72,7 +73,7 @@ def arcade_main_loop():
                     if selected_game == 0:
                         snake_game(screen=screen, s_height=SCREEN_HEIGHT,s_width=SCREEN_WIDTH,font=font,white=WHITE,black=BLACK)
                     elif selected_game == 1:
-                        tic_tac_toe_game()
+                        tic_tac_toe_game(screen=screen, s_height=SCREEN_HEIGHT,s_width=600,font=font,white=WHITE,black=BLACK)
                     # Add more conditions for other games
                     elif selected_game == 6:
                         running = False
