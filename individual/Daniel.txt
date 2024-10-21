@@ -1,8 +1,21 @@
-# Lessons
+# Lessons (Go Through Lesson Resources & Write What you Did Including Code!)
 
-## Lesson 1
+## Lesson 1: Programming for a Purpose
+- Checked out Activity Guide 
+- Assigned Templates to Client Needs
+    - Maria - Template E (Good for kids Reading)
+    - Richard - Template D (Clean Sky and Environmental Area)
+    - Layla - Template B (Text Block ready for use)
+    - Emma - Template C (Chickens are moving around, Just change to Sharks)
+    - Levi - Template A (Space & Comic Books go together)
+- Did the Survey
 
-# Notes
+## Lesson 2: Plotting Shapes
+- learned how to draw shapes using the tool & Replicated the Car
+
+...
+
+# Notes (Write the Notes for The Chapters You Learnt)
 
 ## Chapter 1
 ### Day I Note: Term Gathering list
