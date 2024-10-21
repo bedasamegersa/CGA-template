@@ -1,5 +1,6 @@
 import pygame
 import sys
+from snake import snake_game
 
 # Initialize Pygame
 pygame.init()
@@ -22,7 +23,7 @@ def draw_menu(selected_game):
     screen.fill(WHITE)  # Background color
 
     # Menu options
-    games = ["1. Snake", "2. Tic-Tac-Toe", "3. Pong", "4. Flappy Bird", "5. Breakout", "6. Memory Game"]
+    games = ["1. Snake", "2. Tic-Tac-Toe", "3. Pong", "4. Flappy Bird", "5. Breakout", "6. Memory Game", "Quit"]
     
     # Display each game option
     for i, game in enumerate(games):
@@ -36,9 +37,9 @@ def draw_menu(selected_game):
     pygame.display.update()
 
 # Placeholder functions for games
-def snake_game():
-    print("Starting Snake Game...")
-    # Insert Snake game logic here
+# def snake_game():
+#     print("Starting Snake Game...")
+#     # Insert Snake game logic here
 
 def tic_tac_toe_game():
     print("Starting Tic-Tac-Toe Game...")
@@ -63,16 +64,20 @@ def arcade_main_loop():
 
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_UP:
-                    selected_game = (selected_game - 1) % 6  # Cycle up
+                    selected_game = (selected_game - 1) % 7  # Cycle up
                 elif event.key == pygame.K_DOWN:
-                    selected_game = (selected_game + 1) % 6  # Cycle down
+                    selected_game = (selected_game + 1) % 7  # Cycle down
                 elif event.key == pygame.K_RETURN:
                     # Launch the selected game
                     if selected_game == 0:
-                        snake_game()
+                        snake_game(screen=screen, s_height=SCREEN_HEIGHT,s_width=SCREEN_WIDTH,font=font,white=WHITE,black=BLACK)
                     elif selected_game == 1:
                         tic_tac_toe_game()
                     # Add more conditions for other games
+                    elif selected_game == 6:
+                        running = False
+                        pygame.quit()
+                        sys.exit()
 
         # Keep frame rate stable
         pygame.time.Clock().tick(30)
