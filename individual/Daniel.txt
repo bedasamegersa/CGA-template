@@ -1,0 +1,135 @@
+# Lessons
+
+## Lesson 1
+
+# Notes
+
+## Chapter 1
+### Day I Note: Term Gathering list
+    Category List & Explain Points
+        Game Design: (Player Abilities, Challenges, Environment)
+        Game Rule: (Rules, Player Interactions)
+        GamePlay: (Emmersion, Emotion, Player Agency)
+        GameTypes: (Action, RPG, Strategy) 
+
+        HardWares: (Internal([CPU=>GPU,PPU],Drive(SSD,HHD),RAM), External)
+        SoftWares: API(DirectX), GameEngine(Unity,UnReal)
+
+        History: (CO,GUI,Console,3D, VR)
+        LevelDesign: (SeqOfChallenges, PlayerObjective, Reward)
+
+        GameTheory (Shapley&Harsanyi, NashEqulibrium)
+
+        Essential Math for Game Design (Pythagories Theorem, Angle&Trig, Vectors&Normalization)
+
+    Define
+        NPC & OpenWorld Games
+        Player Preference Matrix
+        Flow and The Science Behind It
+
+        GamePlay & GameRule Optimization
+        - Ludonarrative Dissonance
+        - Emmergent GamePlay
+
+        Zero Sum Game with Example    
+    
+### Day II Note: Term Gathering list
+    Category List & Explain Points
+        Game Concept Vs Game Idea (TargetAudience + BrainStorm)
+        Narrative Structures (Linear, Non-Linear)
+            Non_Linear (Branching, Environmental, Non-Linear Direct, Character Dev) 
+        StoryBoard (Title,Scketchs, Dialog/Action, Specs)
+
+        2D Principles of Motion (Easing, Anticipation, Follow-Through)
+        2D Principles of Composition (Symmetry, Balance, Focal Points)
+
+    CSE for Games
+        Programming Languages: Rapid Development(Python) or FastGames (C#, C++)
+        Algorisms: Search, Sort, PathFind(A*)
+        Data Structure: LinkedList, Array, Tree
+        Design Patterns: SingleTon, Observer, State
+
+    Define
+        What is GDD, when is it produced?
+        Graphics Terms: Pixel, Resolution, ColorMode, FPS
+        Vector Vs Raster
+        
+
+## Chapter 2
+### Day III Note: Term Gathering List 
+    Category List & Explain Points
+        Co-ordinates (Object, World, Eye(Camera), NDC(size 2), Screen(H/W))
+        Object (Vertex(Pos, RGBA), Face, Normal, Edge,) => Geometry
+        Wireframe Tables: (Edge + Vertex)
+        
+        Matrix Transformations: (Identity, Scaling, Rotation, Shear, Translation)
+            Types of Matrix Transformations: (Linear & Non-Linear)
+
+    Define: 
+        right Hand Co-ordinate
+        Mesh => Geometry + Texture(Material <= 2D Image)
+        Eulers formula => V + F - E = 2
+        Quad => Face (Triangle, Square)
+
+        Scaling (Uniform Vs Non-Uniform) => Dimension
+        Transformations (Linear Vs Non-Linear) => CenterPoint
+        Why do We Use 4D matricies for 3D Transformations?
+        T/F Concatination of Matricies is Commutative
+
+### Day IV Note: Term Gathering List
+    Category List & Explain Points
+        Transformations (Model, View(location,Direction,Orientation), Projection, ViewPort)
+        RenderingPipeline (VertexProcessing, Rasterization, Fragment Processing, Output Merging)
+            WireFrame(Vertex-QuadFace(Primitive))
+            Rasterization(Primitive-Framgent)
+            Fragment Proccessing(Fragment-ProccessedFragment), 
+                Texture(texels) (Wrapping + Filtering) 
+                Lighting: Baking & LightMaps 
+                Lighting/Shading Types by Phong Model (Diffuse, Specular, Ambient, Emissive)
+            Output Merging (ProccessedFragment-Pixel) ==> Pixel
+
+    Define
+        Rasterization: VirtualObject=>2D_Image (Quad in ScreenCoordinate => Rendered Pixels)
+        Cannonical View Volume (NDC = 2) => (Orthographic, Perspective)
+
+        Explain the Transformation processes amoung co-ordinates?
+        How Many Planes does a CVV have?, what are the types of CVV and when are they used?
+        Explain the vertex to Pixel convertion process? 
+        What are are three parameters that Define a Camera?
+        What is Fov & AspectRatio? and Why Do We Use them with CVV?
+
+Object (Model Transformation) World (View Transfomration) Camera[Eye] (Projection Transformation) NDC (ViewPort) Screen
+Vertex in Screen (Vertex Processing) Primitive (Rasterization) Fragment (Fragment Processing) Proccessed Fragments[Colored] (Output Merging) Pixels
+
+## Chapter 3
+### Day V Note: In Depth Concepts
+    - Texture Mapping: applying 2D to 3D (texel -> pixel) [texture-world-screen] spaces, applications process no emphasis 
+    - Texel-vs-pixel: Magnification & Minification (distance)
+
+    - Basics of Texturing: Direct pixel-texel, stretched, repeated (Texture Repeating)
+    - In Texture-Repeating: Magnification | Minification | Mipmap (distance-sizing & Memory-miss-performance) [2:at Design or gameEngine generated] [performance-vs-storage 50%/33%] [moire pattern]
+
+    - Texture Sampling: which texel->pixel, (maiming, mipmaping, angleofSurface): Nearest Sampling(nearest Texel) | Bilinear Filtering(4) | Trilinear Filtering(4+mipmap) | Anisotropic Filtering( °:1-16, bi&tri, max128)
+
+## Chapter 4 [Light: compute-complex vs detail methods] [absorb-reflect] 
+    - Defuse Reflection: all-direction/matte [diffuse-vs-specular]: [compute-levels: Lambertian(perfect diffuse: highlight/shadow),Oren-Nayar(surface-roughness: highlight/shadow),Phong(shininess:+specular Reflection)]
+
+    - Lambertian [ Id = C.I.N.L.cos○ (eg.,) ]
+    - Gamma Correction: observed vs actual brightness [expansion & compression y>1] 
+    - HSL:
+        - achromatic:center-outer-vertical => tint&shade: ~Lightness(white/black)
+        - tones: ~Saturation(gray), 
+        - nuance:~Hue [Colors Diagrams(white,dark, gray)], [ Unique-Hues, Monochromatic Colors ]
+    - Colors: [gradient,progression,ramp], [linear(Bilinear)-radial], 
+
+### Day VI Note: In Depth Concepts Continued...
+    - Shaders: RGB transformation code: [flat(polygon-Center/firstV), smooth(gouraud(vertices-gradientBilinear),Phong(+specular))]
+    - Cel/Toon Shadding: (non-photorealistic/!smooth, quantized, light-blocks)
+    - Ink Outlining: sharp-edge(real!rgb-cocktail) [Wireframe(thickwire,face-getEdge,shade), Edge-Detection((depth,s-Normal)sobelFilter=>Edge+rgb-cocktail]
+
+CH-5 [positioningInColor-cocktail-fix]
+    - ImageOrder-vs-ObjectOrder: how it works, [gpu, ray-tracing, real-timeness]
+
+    - 3D projections: 3D -> 2D represent/View
+        - Orthographic Projection: Parrallel Projection: Orthographic view volume: [scale+offset Box: generalisation of Cannonical View Volume: by pos & size (same shape: cube)]
+        - Perspective Projection: [Vanishing point, [types:1,2,3pt] & ground plane]
